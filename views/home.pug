@@ -3,7 +3,9 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title apimovies
+        link(rel="stylesheet", href="style.css")
+      
     body
         
         main
@@ -11,10 +13,6 @@ html(lang="en")
             p Indica que pelicula quieres ver.
 
             form(action="/" method="post")
-                label title: 
-                input(name='title' required)
-                input(type="submit", value="Pelicula")
-        
-
-                  
-        script(src="script.js")
+                label(for='title') title: 
+                input(name='title' id='title' required)
+                input(type="submit", class='boton' value="Pelicula a buscar")
