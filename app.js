@@ -19,7 +19,7 @@ app.get("/film", (req, res) => {
 });
 
 
-app.post('/film', (req, res) => {
+/* app.post('/film', (req, res) => {
   const data= JSON.parse(body.title);
   console.log(data)
   console.log("*******DATOS ENVIADOS*******");
@@ -32,11 +32,11 @@ app.post('/film', (req, res) => {
 
 //Title,Genre,
 app.get('/film/:title', async (req, res) => {
-  if (req.params.title) {
+  if (Madrid) {
       try {
-          let response = await fetch(`http://www.omdbapi.com/?t=${req.params.title}&apikey=bd13e4ce`);
+          let response = await fetch(`http://www.omdbapi.com/?t=Madrid&apikey=bd13e4ce`);
           let film = await response.json(); //{}
-          res.render('film', {film}); // Pinta datos en el pug
+          res.render('film'); // Pinta datos en el pug
       }
       catch (error) {
           console.log(`ERROR: ${error.stack}`);
@@ -47,7 +47,7 @@ app.get('/film/:title', async (req, res) => {
 });
 
 
-
+ */
 
 app.listen(port, () => console.log(`Serving on ${port} https://localhost:3000`));
 

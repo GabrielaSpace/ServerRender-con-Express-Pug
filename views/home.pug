@@ -10,13 +10,11 @@ html(lang="en")
             h3 BIENVENIDO A TU BUSCADOR DE PELICULAS
             p Indica que pelicula quieres ver.
 
-            form(action='/add_movie', method='POST')
-                p
-                  | title: 
-                  input(name='title', value='', type='text')
-                  |          year: 
-                  input(name='year', value='', type='text')
-                  |          imdb: 
-                  input(name='imdb', value='', type='text')
-                input(value='Submit', type='submit')
+            form(action="/" method="post")
+                label title: 
+                input(name='title' required)
+                input(type="submit", value="Pelicula")
+        
+
+                  
         script(src="script.js")
