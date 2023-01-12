@@ -1,0 +1,22 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        
+        main
+            h3 BIENVENIDO A TU BUSCADOR DE PELICULAS
+            p Indica que pelicula quieres ver.
+
+            form(action='/add_movie', method='POST')
+                p
+                  | title: 
+                  input(name='title', value='', type='text')
+                  |          year: 
+                  input(name='year', value='', type='text')
+                  |          imdb: 
+                  input(name='imdb', value='', type='text')
+                input(value='Submit', type='submit')
+        script(src="script.js")
