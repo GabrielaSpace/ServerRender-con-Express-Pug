@@ -1,4 +1,4 @@
-const { json } = require("body-parser");
+const bodyParser = require("body-parser");
 const express = require("express");
 const fetch = require('node-fetch');
 const port = 3000;
@@ -17,29 +17,22 @@ app.get("/", (req, res) => {
 app.get("/film", (req, res) => {
   res.render("film");
 });
-app.post("/film", (req, res) => {
+
+
+app.post('/film', (req, res) => {
   const data= JSON.parse(body.title);
-console.log(data)
-
-});
-
-/* 
-request(url, function (err, response, body) {
-  if(err){
-    console.log('error:', error);
-  } else {
-    let weather = JSON.parse(body)
-    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-    console.log(message);
-  }
-}); */
-
+  console.log(data)
+  console.log("*******DATOS ENVIADOS*******");
+  console.log(req.body);
+  const {title} = req.body;
+  res.status(201).json({msj:`Movie: ${title}`});
+})
 
 
 
 //Title,Genre,
 app.get('/film/:title', async (req, res) => {
-  if (req.params.id) {
+  if (req.params.title) {
       try {
           let response = await fetch(`http://www.omdbapi.com/?t=${req.params.title}&apikey=bd13e4ce`);
           let film = await response.json(); //{}
